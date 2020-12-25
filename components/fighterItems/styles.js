@@ -9,9 +9,6 @@ const styles = StyleSheet.create({
         marginTop: 25,
         resizeMode: 'cover',
     },
-    body: {
-        backgroundColor: "#f2f3f5"
-    },
     sectionContainer: {
         backgroundColor: "black",
     },

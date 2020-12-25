@@ -14,14 +14,14 @@ import {
   ImageBackground
 } from 'react-native';
 import FighterItem from './components/fighterItems/index';
+import Love from './components/love/index';
 
 function App() {
   return (
     <>
       <View>
-        <View style={styles.body}>
-          <FighterItem />
-        </View>
+        <FighterItem />
+        <Love/>
       </View>
     </>
   );
