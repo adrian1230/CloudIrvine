@@ -16,15 +16,17 @@ const texts_ = [
   "Model Alexander"
 ];
 
+const num =  Math.floor(Math.random()*4);
+
 const FighterItem = (props) => {
     return(
       <View style={styles.sectionContainer}>
           <ImageBackground 
-            source={images_[1]}
+            source={images_[num]}
             style={styles.imageBack}
           />
           <View>
-            <Text style={styles.sectionTitle}>{texts_[1]}</Text>
+            <Text style={styles.sectionTitle}>{texts_[num]}</Text>
             <Text style={styles.sectionSubTitle}>Fly into another galaxy</Text>
           </View>
       </View>
