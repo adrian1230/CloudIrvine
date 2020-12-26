@@ -4,12 +4,14 @@ import {
     Image,
     TouchableOpacity
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {Home,ParkingLot,OrderTrade} from '../screens/index';
 import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs"
 import Svg, { Path } from 'react-native-svg';
 import { isIphoneX } from 'react-native-iphone-x-helper';
+import {COLORS_,icons} from '../consts/index';
 
-import {COLORS_} from '../consts/index';
+Icon.loadFont();
 
 const Tab = createBottomTabNavigator();
 
@@ -122,7 +124,7 @@ const Tabs = () => {
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Image
-                            // source={icons.cutlery}
+                            source={icons.home_}
                             resizeMode="contain"
                             style={{
                                 width: 25,
@@ -130,6 +132,11 @@ const Tabs = () => {
                                 tintColor: focused ? COLORS_.primary : COLORS_.secondary
                             }}
                         />
+                        // <Icon
+                        //     name="bell"
+                        //     size={30}
+                        //     color="red"
+                        // />
                     ),
                     tabBarButton: (props) => (
                         <TabBarButt
@@ -145,7 +152,7 @@ const Tabs = () => {
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Image
-                            // source={icons.search}
+                            source={icons.map_}
                             resizeMode="contain"
                             style={{
                                 width: 25,
@@ -168,7 +175,7 @@ const Tabs = () => {
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Image
-                            // source={icons.like}
+                            source={icons.sign_}
                             resizeMode="contain"
                             style={{
                                 width: 25,
@@ -191,7 +198,7 @@ const Tabs = () => {
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Image
-                            // source={icons.user}
+                            source={icons.user_}
                             resizeMode="contain"
                             style={{
                                 width: 25,

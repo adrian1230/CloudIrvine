@@ -3,17 +3,17 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     imageBack: {
         width: '100%',
-        height: '80%',
+        height: '68%',
         alignSelf:'center',
-        marginLeft: 0,
-        marginTop: 25,
+        marginLeft: 10,
         resizeMode: 'cover',
     },
     sectionContainer: {
         backgroundColor: "black",
+        paddingTop: 100,
     },
     sectionTitle: {
-        fontSize: 20,
+        fontSize: 15,
         alignSelf: 'center',
         fontWeight: '700',
         color: 'white'

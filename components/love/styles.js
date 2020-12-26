@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     },
     container_:{
         width: '100%',
+        marginBottom:190,
         backgroundColor: 'black',
         padding: 8
     }

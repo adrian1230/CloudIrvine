@@ -5,12 +5,13 @@ import styles from '../components/love/styles';
 
 const Home = () => {
     return (
-        <SafeAreaView style={{flex:1,backgroundColor:'#F6F6F7'}}>
+        <SafeAreaView 
+            style={{flex:1,backgroundColor:'black'}}
+        >
             <FighterItem />
             <View style={styles.container_}>
                 <TouchableOpacity
                     style={styles.button_}
-                    onPress={()=> navigation.navigate('Home')}
                 >
                     <Text style={{fontSize:20,fontWeight:'bold',color:"yellow"}}>
                         Get in and fight
