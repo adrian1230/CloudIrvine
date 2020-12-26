@@ -8,7 +8,7 @@ const Love = (props) => {
             <Pressable
             style={styles.button_}
                 onPress={()=>{
-                    console.log("yo")
+                    console.log("yo");
                 }}
             >
                 <Text style={{fontWeight:'bold',color:"lightgreen"}}>Get in and fight</Text>
