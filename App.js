@@ -7,12 +7,7 @@
  */
 
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  ImageBackground
-} from 'react-native';
+import {StyleSheet, View, Text, ImageBackground} from 'react-native';
 import FighterItem from './components/fighterItems/index';
 import Love from './components/love/index';
 
@@ -21,11 +16,11 @@ function App() {
     <>
       <View>
         <FighterItem />
-        <Love/>
+        <Love />
       </View>
     </>
   );
-};
+}
 
 const styles = StyleSheet.create({
   sectionDescription: {
