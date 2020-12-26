@@ -7,17 +7,28 @@
  */
 
 import React from 'react';
-import {View} from 'react-native';
-import FighterItem from './components/fighterItems/index';
-import Love from './components/love/index';
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from '@react-navigation/native';
+import {Home, ParkingLot,OrderTrade} from './screens/index';
+import Tabs from "./navigation/btbs";
 
-function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
     <>
-      <View>
-        <FighterItem />
-        <Love />
-      </View>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false
+          }}
+          initialRouteName={'Home'}
+        >
+          <Stack.Screen name="Home" component={Tabs} />
+          <Stack.Screen name="Parking" component={ParkingLot} />
+          <Stack.Screen name="Order" component={OrderTrade} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
   );
 }

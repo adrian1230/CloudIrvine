@@ -37,16 +37,16 @@ export const SIZES_ = {
 };
 
 export const FONTS_ = {
-    largeTitle: { fontFamily: "Oswald-Bold", fontSize: SIZES.largeTitle, lineHeight: 55 },
-    h1: { fontFamily: "Oswald-ExtraLight", fontSize: SIZES.h1, lineHeight: 36 },
-    h2: { fontFamily: "Oswald-Light", fontSize: SIZES.h2, lineHeight: 30 },
-    h3: { fontFamily: "Oswald-Medium", fontSize: SIZES.h3, lineHeight: 22 },
-    h4: { fontFamily: "Oswald-Regular", fontSize: SIZES.h4, lineHeight: 22 },
-    body1: { fontFamily: "Oswald-SemiBold", fontSize: SIZES.body1, lineHeight: 36 },
-    body2: { fontFamily: "Oswald-SemiBold", fontSize: SIZES.body2, lineHeight: 30 },
-    body3: { fontFamily: "Oswald-SemiBold", fontSize: SIZES.body3, lineHeight: 22 },
-    body4: { fontFamily: "Oswald-SemiBold", fontSize: SIZES.body4, lineHeight: 22 },
-    body5: { fontFamily: "Oswald-SemiBold", fontSize: SIZES.body5, lineHeight: 22 },
+    largeTitle: { fontFamily: "Oswald-Bold", fontSize: SIZES_.largeTitle, lineHeight: 55 },
+    h1: { fontFamily: "Oswald-ExtraLight", fontSize: SIZES_.h1, lineHeight: 36 },
+    h2: { fontFamily: "Oswald-Light", fontSize: SIZES_.h2, lineHeight: 30 },
+    h3: { fontFamily: "Oswald-Medium", fontSize: SIZES_.h3, lineHeight: 22 },
+    h4: { fontFamily: "Oswald-Regular", fontSize: SIZES_.h4, lineHeight: 22 },
+    body1: { fontFamily: "Oswald-SemiBold", fontSize: SIZES_.body1, lineHeight: 36 },
+    body2: { fontFamily: "Oswald-SemiBold", fontSize: SIZES_.body2, lineHeight: 30 },
+    body3: { fontFamily: "Oswald-SemiBold", fontSize: SIZES_.body3, lineHeight: 22 },
+    body4: { fontFamily: "Oswald-SemiBold", fontSize: SIZES_.body4, lineHeight: 22 },
+    body5: { fontFamily: "Oswald-SemiBold", fontSize: SIZES_.body5, lineHeight: 22 },
 };
 
 const appTheme = { COLORS_, SIZES_, FONTS_ };
