@@ -9,7 +9,7 @@
 import React from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
-import {Home, ParkingLot,OrderTrade} from './screens/index';
+import {Home, ParkingLot,OrderTrade,User} from './screens/index';
 import Tabs from "./navigation/btbs";
 
 const Stack = createStackNavigator();
@@ -27,6 +27,7 @@ const App = () => {
           <Stack.Screen name="Home" component={Tabs} />
           <Stack.Screen name="Parking" component={ParkingLot} />
           <Stack.Screen name="Order" component={OrderTrade} />
+          <Stack.Screen name="User" component={User} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

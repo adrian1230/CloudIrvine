@@ -5,7 +5,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {Home,ParkingLot,OrderTrade} from '../screens/index';
+import {Home,ParkingLot,OrderTrade,User} from '../screens/index';
 import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs"
 import Svg, { Path } from 'react-native-svg';
 import { isIphoneX } from 'react-native-iphone-x-helper';
@@ -129,7 +129,7 @@ const Tabs = () => {
                             style={{
                                 width: 25,
                                 height: 25,
-                                tintColor: focused ? COLORS_.primary : COLORS_.secondary
+                                tintColor: focused ?  "red" : "black"
                             }}
                         />
                         // <Icon
@@ -155,9 +155,9 @@ const Tabs = () => {
                             source={icons.map_}
                             resizeMode="contain"
                             style={{
-                                width: 25,
-                                height: 25,
-                                tintColor: focused ? COLORS_.primary : COLORS_.secondary
+                                width: 35,
+                                height: 35,
+                                tintColor: focused ?  "red" : "black"
                             }}
                         />
                     ),
@@ -180,7 +180,7 @@ const Tabs = () => {
                             style={{
                                 width: 25,
                                 height: 25,
-                                tintColor: focused ? COLORS_.primary : COLORS_.secondary
+                                tintColor: focused ?  "red" : "black"
                             }}
                         />
                     ),
@@ -194,7 +194,7 @@ const Tabs = () => {
 
             <Tab.Screen
                 name="User"
-                component={Home}
+                component={User}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Image
@@ -203,7 +203,7 @@ const Tabs = () => {
                             style={{
                                 width: 25,
                                 height: 25,
-                                tintColor: focused ? COLORS_.primary : COLORS_.secondary
+                                tintColor: focused ?  "red" : "black"
                             }}
                         />
                     ),
