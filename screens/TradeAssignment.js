@@ -51,7 +51,7 @@ const OrderTrade = () => {
                                 setModalVisible(!modalVisible);
                             }}
                         >
-                        <Text>Hide Modal</Text>
+                        <Text>Okay!</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
