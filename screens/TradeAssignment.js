@@ -6,7 +6,7 @@ import {
     Image,
     FlatList,
     SafeAreaView,
-    Model,
+    Modal,
     TouchableOpacity
 } from "react-native";
 
@@ -37,29 +37,49 @@ const OrderTrade = () => {
     ];
 
     const Item_1 = ({title,img}) => (
-        <TouchableOpacity
-            onPress={()=>{
-                setModalVisible(true);
-            }}
-        >
-            <View 
-                style={
-                    {
-                        flexDirection: 'row',
-                        borderRadius: 20,
-                        borderWidth: 2,
-                        backgroundColor: 'floralwhite',
-                        borderColor: 'lightgray',
-                        marginBottom: 25,
-                        padding: 5,
-                        justifyContent: 'space-between'
-                    }
-                }
+        <View>
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
             >
-                <Text style={styles.title_}>{title}</Text>
-                <Image style={styles.image_} source={img}/>
-            </View>
-        </TouchableOpacity>
+                <View>
+                    <View>
+                        <Text>Hello World!</Text>
+                        <TouchableOpacity
+                            onPress={() => {
+                                setModalVisible(!modalVisible);
+                            }}
+                        >
+                        <Text>Hide Modal</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </Modal>
+            <TouchableOpacity
+                onPress={()=>{
+                    setModalVisible(true);
+                }}
+            >
+                <View 
+                    style={
+                        {
+                            flexDirection: 'row',
+                            borderRadius: 20,
+                            borderWidth: 2,
+                            backgroundColor: 'floralwhite',
+                            borderColor: 'lightgray',
+                            marginBottom: 25,
+                            padding: 5,
+                            justifyContent: 'space-between'
+                        }
+                    }
+                >
+                    <Text style={styles.title_}>{title}</Text>
+                    <Image style={styles.image_} source={img}/>
+                </View>
+            </TouchableOpacity>
+        </View>
     );
 
     const renderItem1 = ({item}) => (
