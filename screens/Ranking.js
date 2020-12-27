@@ -13,6 +13,13 @@ const Ranking = () => {
         {"title":"Model Daemon"},
         {"title":"Model Alexander"}
     ];
+
+    const images_ = [
+        require('../assets/images/fighter1.png'),
+        require('../assets/images/fighter2.png'),
+        require('../assets/images/fighter3.png'),
+        require('../assets/images/fighter4.png')
+    ];
     
     var d = [];
 
@@ -38,16 +45,41 @@ const Ranking = () => {
             <View style={styles.container_101}>
                 {
                     ttt.map(
-                        (p) =>
+                        (p,ind) =>
                             <View 
                                 style={
                                     {
-                                        marginHorizontal:15,
-                                        alignSelf: 'center'
+                                        alignSelf: 'center',
+                                        paddingVertical: 25,
+                                        flexDirection: 'row',
+                                        backgroundColor: 'white',
                                     }
                                 }
                             >
-                                <Text style={{color:'red'}}>{p.title}</Text>
+                                <View style={{width:50}}></View>
+                                <Text style={
+                                        {
+                                            color:'red',
+                                            fontSize: 30,
+                                            alignSelf: 'flex-start'
+                                        }
+                                    }
+                                >
+                                    {ind+1}
+                                </Text>
+                                <View style={{width:170}}></View>
+                                <Text 
+                                    style={
+                                        {
+                                            color:'red',
+                                            fontSize: 30,
+                                            alignSelf: 'flex-end',
+                                            width: 165
+                                        }
+                                    }
+                                >
+                                    {p.title}
+                                </Text>
                             </View>
                     )
                 }
@@ -63,7 +95,11 @@ const styles = StyleSheet.create({
     container_101: {
         height: '100%',
         width: '100%',
-        backgroundColor: 'black'
+        backgroundColor: 'black',
+        borderRadius: 20,
+        borderWidth: 2,
+        paddingTop: 5,
+        borderColor: 'yellow'
     },
     text_h1: {
         color: "white",
