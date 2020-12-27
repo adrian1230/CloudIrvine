@@ -4,6 +4,7 @@ import {
     View,
     StyleSheet,
     Image,
+    FlatList,
     SafeAreaView,
     ScrollView,
 } from "react-native";
@@ -32,11 +33,48 @@ const OrderTrade = () => {
         }
     ];
 
+    const Item_1 = ({title}) => (
+        <View>
+            <Text>{title}</Text>
+        </View>
+    );
+
+    const renderItem1 = ({item}) => (
+        <Item_1 title={item.title} />
+    );
+
+    const Item_2 = ({img}) => (
+        <View>
+            <Image source={img}/>
+        </View>
+    );
+
+    const renderItem2 = ({item}) => (
+        <Item_2 img={item.img}/>
+    );
+
+    const Item_3 = ({selection_}) => (
+        <View>
+            {
+                selection_.map(
+                    (p)=>
+                        <View>
+                            <Text>{p.pilots}</Text>
+                        </View>
+                )
+            }
+        </View>
+    );
+
+    const renderItem3 = ({item}) => (
+        <Item_3 selection_={item.pilots} />
+    );
+
     return (
         <SafeAreaView>
             <ScrollView>
                 <View style={styles.container_102}>
-                    <View>
+                    <View style={{marginBottom:10}}>
                         <Text style={{
                             textAlign:"center",
                             fontStyle:'italic',
@@ -46,6 +84,16 @@ const OrderTrade = () => {
                         >
                             Order
                         </Text>
+                        <View style={{
+                                width:"90%",
+                                marginTop: 15,
+                                margin: 20,
+                                borderColor: 'grey',
+                                borderWidth: 1.5
+                            }}
+                        ></View>
+                    </View>
+                    <View>
                         <View style={{
                                 width:"90%",
                                 marginTop: 15,
