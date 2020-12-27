@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
     Text,
     View,
@@ -6,10 +6,13 @@ import {
     Image,
     FlatList,
     SafeAreaView,
-    Model
+    Model,
+    TouchableOpacity
 } from "react-native";
 
 const OrderTrade = () => {
+    const [modalVisible, setModalVisible] = useState(false);
+
     const selection_ = [
         {
             "title":"Model Syrion",
@@ -34,36 +37,42 @@ const OrderTrade = () => {
     ];
 
     const Item_1 = ({title,img}) => (
-        <View 
-            style={
-                {
-                    flexDirection: 'row',
-                    borderRadius: 20,
-                    borderWidth: 2,
-                    backgroundColor: 'floralwhite',
-                    borderColor: 'lightgray',
-                    marginBottom: 25,
-                    padding: 5,
-                    justifyContent: 'space-between'
-                }
-            }
+        <TouchableOpacity
+            onPress={()=>{
+                setModalVisible(true);
+            }}
         >
-            <Text style={styles.title_}>{title}</Text>
-            <Image style={styles.image_} source={img}/>
-        </View>
+            <View 
+                style={
+                    {
+                        flexDirection: 'row',
+                        borderRadius: 20,
+                        borderWidth: 2,
+                        backgroundColor: 'floralwhite',
+                        borderColor: 'lightgray',
+                        marginBottom: 25,
+                        padding: 5,
+                        justifyContent: 'space-between'
+                    }
+                }
+            >
+                <Text style={styles.title_}>{title}</Text>
+                <Image style={styles.image_} source={img}/>
+            </View>
+        </TouchableOpacity>
     );
 
     const renderItem1 = ({item}) => (
         <Item_1 title={item.title} img={item.img} />
     );
 
-    const Item_3 = ({selection_}) => (
+    const Item_3 = ({pilots}) => (
         <View>
             {
-                selection_.map(
+                pilots.map(
                     (p)=>
                         <View>
-                            <Text>{p.pilots}</Text>
+                            <Text>{p}</Text>
                         </View>
                 )
             }
