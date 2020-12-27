@@ -5,7 +5,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {Home,ParkingLot,OrderTrade,User} from '../screens/index';
+import {Home,ParkingLot,OrderTrade,Ranking} from '../screens/index';
 import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs"
 import Svg, { Path } from 'react-native-svg';
 import { isIphoneX } from 'react-native-iphone-x-helper';
@@ -194,7 +194,7 @@ const Tabs = () => {
 
             <Tab.Screen
                 name="User"
-                component={User}
+                component={Ranking}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Image

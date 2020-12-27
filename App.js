@@ -9,7 +9,7 @@
 import React from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
-import {Home, ParkingLot,OrderTrade,User} from './screens/index';
+import {Home, ParkingLot,OrderTrade,Ranking} from './screens/index';
 import Tabs from "./navigation/btbs";
 
 const Stack = createStackNavigator();
@@ -17,7 +17,7 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <>
-      <NavigationContainer>
+      <NavigationContainer style={{backgroundColor:'black'}}>
         <Stack.Navigator
           screenOptions={{
             headerShown: false
@@ -27,7 +27,7 @@ const App = () => {
           <Stack.Screen name="Home" component={Tabs} />
           <Stack.Screen name="Parking" component={ParkingLot} />
           <Stack.Screen name="Order" component={OrderTrade} />
-          <Stack.Screen name="User" component={User} />
+          <Stack.Screen name="User" component={Ranking} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
