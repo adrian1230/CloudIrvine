@@ -45,7 +45,7 @@ const OrderTrade = () => {
 
     const Item_2 = ({img}) => (
         <View>
-            <Image source={img}/>
+            <Image style={styles.image_} source={img}/>
         </View>
     );
 
@@ -93,15 +93,23 @@ const OrderTrade = () => {
                             }}
                         ></View>
                     </View>
-                    <View>
-                        <View style={{
-                                width:"90%",
-                                marginTop: 15,
-                                margin: 20,
-                                borderColor: 'grey',
-                                borderWidth: 1.5
-                            }}
-                        ></View>
+                    <View 
+                        style={
+                            {
+                                flexDirection: 'row',
+                            }
+                        }
+                    >
+                        <FlatList
+                            data={selection_}
+                            renderItem={renderItem1}
+                            keyExtractor={item=>item.title} 
+                        />
+                        <FlatList
+                            data={selection_}
+                            renderItem={renderItem2}
+                            keyExtractor={item=>item.img} 
+                        />
                     </View>
                 </View>
             </ScrollView>
@@ -112,6 +120,10 @@ const OrderTrade = () => {
 const styles = StyleSheet.create({
     container_102: {
         marginTop: 20
+    },
+    image_: {
+        width: 45,
+        height: 45,
     }
 })
 
