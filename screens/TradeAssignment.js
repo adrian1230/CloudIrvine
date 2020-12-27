@@ -77,42 +77,40 @@ const OrderTrade = () => {
 
     return (
         <SafeAreaView>
-            <ScrollView>
-                <View style={styles.container_102}>
-                    <View style={{marginBottom:10}}>
-                        <Text style={{
-                            textAlign:"center",
-                            fontStyle:'italic',
-                            fontWeight:'700',
-                            color:'red',
-                            fontSize:30}}
-                        >
-                            Order
-                        </Text>
-                        <View style={{
-                                width:"90%",
-                                marginTop: 15,
-                                margin: 20,
-                                borderColor: 'grey',
-                                borderWidth: 1.5
-                            }}
-                        ></View>
-                    </View>
-                    <View 
-                        style={
-                            {
-                                marginHorizontal: 23,
-                            }
-                        }
+            <View style={styles.container_102}>
+                <View style={{marginBottom:10}}>
+                    <Text style={{
+                        textAlign:"center",
+                        fontStyle:'italic',
+                        fontWeight:'700',
+                        color:'red',
+                        fontSize:30}}
                     >
-                        <FlatList
-                            data={selection_}
-                            renderItem={renderItem1}
-                            keyExtractor={item=>item.title} 
-                        />
-                    </View>
+                        Order
+                    </Text>
+                    <View style={{
+                            width:"90%",
+                            marginTop: 15,
+                            margin: 20,
+                            borderColor: 'grey',
+                            borderWidth: 1.5
+                        }}
+                    ></View>
                 </View>
-            </ScrollView>
+                <View 
+                    style={
+                        {
+                            marginHorizontal: 23,
+                        }
+                    }
+                >
+                    <FlatList
+                        data={selection_}
+                        renderItem={renderItem1}
+                        keyExtractor={item=>item.title} 
+                    />
+                </View>
+            </View>
         </SafeAreaView>
     )
 }

@@ -40,7 +40,7 @@ const Ranking = () => {
                 {
                     ttt.map(
                         (p,ind) =>
-                            <View 
+                            <View key={ind}
                                 style={
                                     {
                                         alignSelf: 'center',
