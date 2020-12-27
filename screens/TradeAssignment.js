@@ -6,8 +6,7 @@ import {
     Image,
     FlatList,
     SafeAreaView,
-    ScrollView,
-    Pressable
+    Model
 } from "react-native";
 
 const OrderTrade = () => {
@@ -86,7 +85,19 @@ const OrderTrade = () => {
                         color:'red',
                         fontSize:30}}
                     >
-                        Order
+                        Trade
+                    </Text>
+                    <Text 
+                        style={
+                            {
+                                color:'black',
+                                fontSize:15,
+                                fontWeight:'600',
+                                textAlign:'center'
+                            }
+                        }
+                    >
+                        Order your next flight here
                     </Text>
                     <View style={{
                             width:"90%",
