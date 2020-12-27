@@ -7,6 +7,7 @@ import {
     FlatList,
     SafeAreaView,
     ScrollView,
+    Pressable
 } from "react-native";
 
 const OrderTrade = () => {
@@ -33,24 +34,28 @@ const OrderTrade = () => {
         }
     ];
 
-    const Item_1 = ({title}) => (
-        <View>
-            <Text>{title}</Text>
-        </View>
-    );
-
-    const renderItem1 = ({item}) => (
-        <Item_1 title={item.title} />
-    );
-
-    const Item_2 = ({img}) => (
-        <View>
+    const Item_1 = ({title,img}) => (
+        <View 
+            style={
+                {
+                    flexDirection: 'row',
+                    borderRadius: 20,
+                    borderWidth: 2,
+                    backgroundColor: 'floralwhite',
+                    borderColor: 'lightgray',
+                    marginBottom: 25,
+                    padding: 5,
+                    justifyContent: 'space-between'
+                }
+            }
+        >
+            <Text style={styles.title_}>{title}</Text>
             <Image style={styles.image_} source={img}/>
         </View>
     );
 
-    const renderItem2 = ({item}) => (
-        <Item_2 img={item.img}/>
+    const renderItem1 = ({item}) => (
+        <Item_1 title={item.title} img={item.img} />
     );
 
     const Item_3 = ({selection_}) => (
@@ -96,7 +101,7 @@ const OrderTrade = () => {
                     <View 
                         style={
                             {
-                                flexDirection: 'row',
+                                marginHorizontal: 23,
                             }
                         }
                     >
@@ -104,11 +109,6 @@ const OrderTrade = () => {
                             data={selection_}
                             renderItem={renderItem1}
                             keyExtractor={item=>item.title} 
-                        />
-                        <FlatList
-                            data={selection_}
-                            renderItem={renderItem2}
-                            keyExtractor={item=>item.img} 
                         />
                     </View>
                 </View>
@@ -122,9 +122,17 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     image_: {
-        width: 45,
-        height: 45,
-    }
+        width: 75,
+        height: 75,
+        marginRight: 15
+    },
+    title_: {
+        fontSize: 30,
+        fontWeight: '600',
+        marginTop: 15,
+        marginLeft: 15,
+        color: 'crimson'
+    },
 })
 
 export default OrderTrade;
