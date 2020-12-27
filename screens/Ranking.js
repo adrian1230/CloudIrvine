@@ -4,21 +4,15 @@ import {
     StyleSheet,
     Text,
     View,
+    Image,
 } from "react-native";
 
 const Ranking = () => {
     const texts_ = [
-        {"title":"Model Syrion"},
-        {"title":"Model Pomme"},
-        {"title":"Model Daemon"},
-        {"title":"Model Alexander"}
-    ];
-
-    const images_ = [
-        require('../assets/images/fighter1.png'),
-        require('../assets/images/fighter2.png'),
-        require('../assets/images/fighter3.png'),
-        require('../assets/images/fighter4.png')
+        {"title":"Model Syrion","img":require('../assets/images/fighter1.png')},
+        {"title":"Model Pomme","img":require('../assets/images/fighter2.png')},
+        {"title":"Model Daemon","img":require('../assets/images/fighter3.png')},
+        {"title":"Model Alexander","img":require('../assets/images/fighter4.png')}
     ];
     
     var d = [];
@@ -52,7 +46,6 @@ const Ranking = () => {
                                         alignSelf: 'center',
                                         paddingVertical: 25,
                                         flexDirection: 'row',
-                                        backgroundColor: 'white',
                                     }
                                 }
                             >
@@ -67,19 +60,35 @@ const Ranking = () => {
                                 >
                                     {ind+1}
                                 </Text>
-                                <View style={{width:170}}></View>
+                                <View style={{width:120}}></View>
                                 <Text 
                                     style={
                                         {
                                             color:'red',
                                             fontSize: 30,
                                             alignSelf: 'flex-end',
-                                            width: 165
+                                            width: 125
                                         }
                                     }
                                 >
                                     {p.title}
                                 </Text>
+                                <View style={{width:15}}></View>
+                                <View style={
+                                        {
+                                            width:'38%'
+                                        }
+                                    }
+                                >
+                                    <Image source={p.img} 
+                                        style={
+                                            {
+                                                width:75,
+                                                height:75
+                                            }
+                                        } 
+                                    />
+                                </View>
                             </View>
                     )
                 }
@@ -95,11 +104,7 @@ const styles = StyleSheet.create({
     container_101: {
         height: '100%',
         width: '100%',
-        backgroundColor: 'black',
-        borderRadius: 20,
-        borderWidth: 2,
-        paddingTop: 5,
-        borderColor: 'yellow'
+        backgroundColor: 'black'
     },
     text_h1: {
         color: "white",
