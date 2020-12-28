@@ -36,6 +36,23 @@ const OrderTrade = () => {
         }
     ];
 
+    const Item_3 = ({pilots}) => (
+        <View>
+            {
+                pilots.map(
+                    (p,ind)=>
+                        <View key={ind}>
+                            <Text>{p}</Text>
+                        </View>
+                )
+            }
+        </View>
+    );
+
+    const renderItem3 = ({item}) => (
+        <Item_3 pilots={item.pilots} />
+    );
+
     const Item_1 = ({title,img}) => (
         <View>
             <Modal
@@ -43,15 +60,44 @@ const OrderTrade = () => {
                 transparent={true}
                 visible={modalVisible}
             >
-                <View>
-                    <View>
-                        <Text>Hello World!</Text>
+                <View
+                    style={
+                        {
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            marginTop: 50
+                        }
+                    }
+                >
+                    <View
+                        style={
+                            {
+                                margin: 10,
+                                backgroundColor: 'floralwhite',
+                                borderRadius: 20,
+                                alignItems: 'center',
+                                shadowColor: 'black',
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.9,
+                                elevation: 5
+                            }
+                        }
+                    >
+                        <FlatList
+                            data={selection_}
+                            renderItem={renderItem3}
+                            keyExtractor={item=>item.title} 
+                        />
                         <TouchableOpacity
                             onPress={() => {
                                 setModalVisible(!modalVisible);
                             }}
                         >
-                        <Text>Okay!</Text>
+                            <Text>Okay!</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -84,23 +130,6 @@ const OrderTrade = () => {
 
     const renderItem1 = ({item}) => (
         <Item_1 title={item.title} img={item.img} />
-    );
-
-    const Item_3 = ({pilots}) => (
-        <View>
-            {
-                pilots.map(
-                    (p)=>
-                        <View>
-                            <Text>{p}</Text>
-                        </View>
-                )
-            }
-        </View>
-    );
-
-    const renderItem3 = ({item}) => (
-        <Item_3 selection_={item.pilots} />
     );
 
     return (
