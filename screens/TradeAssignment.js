@@ -36,6 +36,37 @@ const OrderTrade = () => {
         }
     ];
 
+    const Item_4 = () => (
+        <View 
+            style={
+                {
+                    padding: 15,
+                    marginHorizontal: 50,
+                    marginVertical: 50,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    alignSelf: 'center'
+                }
+            }
+        >
+            {
+                selection_.map(
+                    (val,ind) =>
+                        <View key={ind}>
+                            {
+                                val.pilots.map(
+                                    (p,in_d) =>
+                                        <View key={in_d}>
+                                            <Text>{p}</Text>
+                                        </View>
+                                )
+                            }
+                        </View>
+                )
+            }
+        </View>
+    );
+
     const Item_3 = ({pilots}) => (
         <View>
             {
@@ -65,14 +96,14 @@ const OrderTrade = () => {
                         {
                             justifyContent: 'center',
                             alignItems: 'center',
-                            marginTop: 50
+                            marginTop: 90
                         }
                     }
                 >
                     <View
                         style={
                             {
-                                margin: 10,
+                                marginTop: 20,
                                 backgroundColor: 'floralwhite',
                                 borderRadius: 20,
                                 alignItems: 'center',
@@ -87,17 +118,24 @@ const OrderTrade = () => {
                             }
                         }
                     >
-                        <FlatList
-                            data={selection_}
-                            renderItem={renderItem3}
-                            keyExtractor={item=>item.title} 
-                        />
+                        <Item_4 />
                         <TouchableOpacity
                             onPress={() => {
                                 setModalVisible(!modalVisible);
                             }}
+                            style={{
+                                marginBottom: 20
+                            }}
                         >
-                            <Text>Okay!</Text>
+                            <Text
+                                style={{
+                                    fontWeight: '700',
+                                    fontSize: 50,
+                                    color: 'pink'
+                                }}
+                            >
+                                Okay!
+                            </Text>
                         </TouchableOpacity>
                     </View>
                 </View>
