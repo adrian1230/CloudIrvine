@@ -46,11 +46,11 @@ const Home = ({navigation}) => {
         "Model Alexander"
     ];
     
-    const num =  Math.floor(Math.random()*4);
-    
-    const [vehicle,setVehicle] = React.useState(logo_);
+    const num =  Math.floor(Math.random()*4)
 
     const [index,setIndex] = React.useState(num)
+    
+    const [vehicle,setVehicle] = React.useState(logo_);
 
     return (
         <SafeAreaView 

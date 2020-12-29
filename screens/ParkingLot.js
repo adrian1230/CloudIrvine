@@ -29,10 +29,8 @@ const ParkingLot = ({route}) => {
             src: '../assets/images/fighter4.png'
         }
     ];
-    
-    const num =  Math.floor(Math.random()*4)
 
-    const [index,setIndex] = React.useState(num)
+    const [index,setIndex] = React.useState(null)
 
     const mapView = useRef()
 
