@@ -38,7 +38,51 @@ const ParkingLot = ({route,navigation}) => {
 
     const mapView = useRef()
 
-    const [rest, setRest] = useState(null)
+    const initLoca = {
+        streetName: 'Kimberley Street',
+        gps: {
+            latitude: 6.17221,
+            longitude: 92.1239812
+        }
+    }
+
+    const locationData = [
+        {
+            id: 0,
+            name: 'a',
+            location: {
+                latitude: 1.12321312335,
+                longitude: 102.6123123417
+            }
+        },
+        {
+            id: 1,
+            name: 'b',
+            location: {
+                latitude: 23.12321312335,
+                longitude: 10.612417
+            }
+        },
+        {
+            id: 2,
+            name: 'c',
+            location: {
+                latitude: 32.1312335,
+                longitude: 61.23123417
+            }
+        },
+        {
+            id: 3,
+            name: 'd',
+            location: {
+                latitude: 1.123,
+                longitude: 98.61123417
+            }
+        },
+    ];
+
+    const [loca, setLoca] = useState(locationData)
+    const [currentLocation, setCurrentLocation] = useState(initLoca)
     const [streetName, setStreetName] = useState("")
     const [fromLocation, setFromLocation] = useState(null)
     const [toLocation, setToLocation] = useState(null)
@@ -49,7 +93,7 @@ const ParkingLot = ({route,navigation}) => {
     const [angle, setAngle] = useState(0)
 
     useEffect(() => {
-        let { rest, currentLocation } = route.params;
+        let { loca, currentLocation } = route.params;
 
         let fromLoc = currentLocation.gps
         let toLoc = rest.location
@@ -62,7 +106,7 @@ const ParkingLot = ({route,navigation}) => {
             longitudeDelta: Math.abs(fromLoc.longitude - toLoc.longitude) * 2
         }
 
-        setRest(rest)
+        setLoca(loca)
         setStreetName(street)
         setFromLocation(fromLoc)
         setToLocation(toLoc)
@@ -255,99 +299,6 @@ const ParkingLot = ({route,navigation}) => {
         )
     }
 
-    function renderDeliveryInfo() {
-        return (
-            <View
-                style={{
-                    position: 'absolute',
-                    bottom: 50,
-                    left: 0,
-                    right: 0,
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}
-            >
-                <View
-                    style={{
-                        width: SIZES_.width * 0.9,
-                        paddingVertical: SIZES_.padding * 3,
-                        paddingHorizontal: SIZES_.padding * 2,
-                        borderRadius: SIZES_.radius,
-                        backgroundColor: COLORS_.white
-                    }}
-                >
-                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        {/* Avatar */}
-                        <Image
-                            source={icons.map_}
-                            style={{
-                                width: 50,
-                                height: 50,
-                                borderRadius: 25
-                            }}
-                        />
-
-                        <View style={{ flex: 1, marginLeft: SIZES_.padding }}>
-                            {/* Name & Rating */}
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                <Text style={{ ...FONTS_.h4 }}>{rest?.courier.name}</Text>
-                                <View style={{ flexDirection: 'row' }}>
-                                    <Image
-                                        source={icons.map_}
-                                        style={{ width: 18, height: 18, tintColor: COLORS_.primary, marginRight: SIZES_.padding }}
-                                    />
-                                    <Text style={{ ...FONTS_.body3 }}>{rest?.rating}</Text>
-                                </View>
-                            </View>
-
-                            {/* Restaurant */}
-                            <Text style={{ color: COLORS_.darkgray, ...FONTS_.body4 }}>{rest?.name}</Text>
-                        </View>
-                    </View>
-
-                    {/* Buttons */}
-                    <View
-                        style={{
-                            flexDirection: 'row',
-                            marginTop: SIZES_.padding * 2,
-                            justifyContent: 'space-between'
-                        }}
-                    >
-                        <TouchableOpacity
-                            style={{
-                                flex: 1,
-                                height: 50,
-                                marginRight: 10,
-                                backgroundColor: COLORS_.primary,
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                borderRadius: 10
-                            }}
-                            onPress={() => navigation.navigate("Home")}
-                        >
-                            <Text style={{ ...FONTS_.h4, color: COLORS_.white }}>Call</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity
-                            style={{
-                                flex: 1,
-                                height: 50,
-                                backgroundColor: COLORS_.secondary,
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                borderRadius: 10
-                            }}
-                            onPress={() => navigation.goBack()}
-                        >
-                            <Text style={{ ...FONTS_.h4, color: COLORS_.white }}>Cancel</Text>
-                        </TouchableOpacity>
-                    </View>
-
-                </View>
-            </View>
-        )
-    }
-
     function renderButtons() {
         return (
             <View
@@ -360,7 +311,6 @@ const ParkingLot = ({route,navigation}) => {
                     justifyContent: 'space-between'
                 }}
             >
-                {/* Zoom In */}
                 <TouchableOpacity
                     style={{
                         width: 60,
@@ -375,7 +325,6 @@ const ParkingLot = ({route,navigation}) => {
                     <Text style={{ ...FONTS_.body1 }}>+</Text>
                 </TouchableOpacity>
 
-                {/* Zoom Out */}
                 <TouchableOpacity
                     style={{
                         width: 60,
@@ -398,7 +347,6 @@ const ParkingLot = ({route,navigation}) => {
         <View style={{ flex: 1 }}>
             {renderMap()}
             {renderDestinationHeader()}
-            {renderDeliveryInfo()}
             {renderButtons()}
         </View>
     )
