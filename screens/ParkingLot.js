@@ -1,12 +1,8 @@
-import React, {useRef,useState,useEffect} from "react";
+import React from "react";
 import {
-    Text,
     View,
-    Image,
-    TouchableOpacity,
 } from "react-native";
-import MapView, { AnimatedRegion, Animated,PROVIDER_GOOGLE, Marker} from 'react-native-maps';
-import MapViewDirections from 'react-native-maps-directions';
+import MapView, { PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 
 import {icons,gakey} from "../consts/index";
 
