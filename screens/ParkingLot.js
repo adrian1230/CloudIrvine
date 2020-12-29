@@ -12,6 +12,23 @@ class ParkingLot extends React.Component {
     render() {
         return (
             <View style={{flex:1}}>
+                <View styles={{flex:1}}>
+                    <MapView 
+                        style={{ 
+                            flex: 1,
+                            minHeight:615,
+                        }}
+                        provider={PROVIDER_GOOGLE}
+                        showsUserLocation
+                        initialRegion={{
+                            latitude: 59.531,
+                            longitude: 11.1112,
+                            latitudeDelta: 0.0922,
+                            longitudeDelta: 0.07
+                        }}
+                    >
+                    </MapView>
+                </View>
                 <View
                     style={{
                         position: 'absolute',
@@ -50,21 +67,6 @@ class ParkingLot extends React.Component {
                         <Text>{Math.ceil(11.8)} mins</Text>
                     </View>
                 </View>
-                <MapView 
-                    style={{ 
-                        flex: 1,
-                        minHeight:615,
-                    }}
-                    provider={PROVIDER_GOOGLE}
-                    showsUserLocation
-                    initialRegion={{
-                        latitude: 59.531,
-                        longitude: 11.1112,
-                        latitudeDelta: 0.0922,
-                        longitudeDelta: 0.07
-                    }}
-                >
-                </MapView>
             </View>
         )
     }
