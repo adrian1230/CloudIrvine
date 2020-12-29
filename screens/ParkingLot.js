@@ -11,23 +11,23 @@ import MapViewDirections from 'react-native-maps-directions';
 import {COLORS_,SIZES_,icons,FONTS_,gakey} from "../consts/index";
 
 const ParkingLot = ({route,navigation}) => {
-    const mapView = React.useRef()
+    const mapView = useRef()
 
-    const [restaurant, setRestaurant] = React.useState(null)
-    const [streetName, setStreetName] = React.useState("")
-    const [fromLocation, setFromLocation] = React.useState(null)
-    const [toLocation, setToLocation] = React.useState(null)
-    const [region, setRegion] = React.useState(null)
+    const [rest, setRest] = useState(null)
+    const [streetName, setStreetName] = useState("")
+    const [fromLocation, setFromLocation] = useState(null)
+    const [toLocation, setToLocation] = useState(null)
+    const [region, setRegion] = useState(null)
 
-    const [duration, setDuration] = React.useState(0)
-    const [isReady, setIsReady] = React.useState(false)
-    const [angle, setAngle] = React.useState(0)
+    const [duration, setDuration] = useState(0)
+    const [isReady, setIsReady] = useState(false)
+    const [angle, setAngle] = useState(0)
 
-    React.useEffect(() => {
-        let { restaurant, currentLocation } = route.params;
+    useEffect(() => {
+        let { rest, currentLocation } = route.params;
 
         let fromLoc = currentLocation.gps
-        let toLoc = restaurant.location
+        let toLoc = rest.location
         let street = currentLocation.streetName
 
         let mapRegion = {
@@ -37,7 +37,7 @@ const ParkingLot = ({route,navigation}) => {
             longitudeDelta: Math.abs(fromLoc.longitude - toLoc.longitude) * 2
         }
 
-        setRestaurant(restaurant)
+        setRest(rest)
         setStreetName(street)
         setFromLocation(fromLoc)
         setToLocation(toLoc)
@@ -106,7 +106,7 @@ const ParkingLot = ({route,navigation}) => {
                         }}
                     >
                         <Image
-                            source={icons.pin}
+                            // source={icons.pin}
                             style={{
                                 width: 25,
                                 height: 25,
@@ -126,7 +126,7 @@ const ParkingLot = ({route,navigation}) => {
                 rotation={angle}
             >
                 <Image
-                    source={icons.car}
+                    // source={icons.car}
                     style={{
                         width: 40,
                         height: 40
@@ -212,7 +212,7 @@ const ParkingLot = ({route,navigation}) => {
                     }}
                 >
                     <Image
-                        source={icons.red_pin}
+                        // source={icons.red_pin}
                         style={{
                             width: 30,
                             height: 30,
@@ -254,7 +254,7 @@ const ParkingLot = ({route,navigation}) => {
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         {/* Avatar */}
                         <Image
-                            source={restaurant?.courier.avatar}
+                            // source={restaurant?.courier.avatar}
                             style={{
                                 width: 50,
                                 height: 50,
@@ -265,18 +265,18 @@ const ParkingLot = ({route,navigation}) => {
                         <View style={{ flex: 1, marginLeft: SIZES_.padding }}>
                             {/* Name & Rating */}
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                <Text style={{ ...FONTS_.h4 }}>{restaurant?.courier.name}</Text>
+                                <Text style={{ ...FONTS_.h4 }}>{rest?.courier.name}</Text>
                                 <View style={{ flexDirection: 'row' }}>
                                     <Image
-                                        source={icons.star}
+                                        // source={icons.star}
                                         style={{ width: 18, height: 18, tintColor: COLORS_.primary, marginRight: SIZES_.padding }}
                                     />
-                                    <Text style={{ ...FONTS_.body3 }}>{restaurant?.rating}</Text>
+                                    <Text style={{ ...FONTS_.body3 }}>{rest?.rating}</Text>
                                 </View>
                             </View>
 
                             {/* Restaurant */}
-                            <Text style={{ color: COLORS_.darkgray, ...FONTS_.body4 }}>{restaurant?.name}</Text>
+                            <Text style={{ color: COLORS_.darkgray, ...FONTS_.body4 }}>{rest?.name}</Text>
                         </View>
                     </View>
 

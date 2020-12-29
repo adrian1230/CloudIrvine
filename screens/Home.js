@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import {View,Text,SafeAreaView,TouchableOpacity} from 'react-native';
 import FighterItem from '../components/fighterItems/index';
 import styles from '../components/love/styles';
