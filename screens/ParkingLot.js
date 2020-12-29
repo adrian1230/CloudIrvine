@@ -10,7 +10,7 @@ import MapViewDirections from 'react-native-maps-directions';
 
 import {COLORS_,SIZES_,icons,FONTS_,gakey} from "../consts/index";
 
-const ParkingLot = ({route,navigation}) => {
+const ParkingLot = ({route}) => {
     const logo_ = [
         {
             id: 0,
@@ -31,8 +31,6 @@ const ParkingLot = ({route,navigation}) => {
     ];
     
     const num =  Math.floor(Math.random()*4)
-    
-    const [vehicle,setVehicle] = React.useState(logo_)
 
     const [index,setIndex] = React.useState(num)
 
