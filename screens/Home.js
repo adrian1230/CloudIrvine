@@ -1,14 +1,80 @@
 import React, {Component} from "react";
-import {View,Text,SafeAreaView,TouchableOpacity} from 'react-native';
-import FighterItem from '../components/fighterItems/index';
+import {
+    View,
+    ImageBackground,
+    Text,
+    SafeAreaView,
+    TouchableOpacity
+} from 'react-native';
 import styles from '../components/love/styles';
 
-const Home = () => {
+const Home = ({navigation}) => {
+    const images_ = [
+        require('../assets/images/fighter1.png'),
+        require('../assets/images/fighter2.png'),
+        require('../assets/images/fighter3.png'),
+        require('../assets/images/fighter4.png'),
+    ];
+    
+    const texts_ = [
+        "Model Syrion",
+        "Model Pomme",
+        "Model Daemon",
+        "Model Alexander"
+    ];
+    
+    const car = images_[num];
+    
+    const num =  Math.floor(Math.random()*4);
+    
+    const [vehicle,setVehicle] = React.useState(car);
+
     return (
         <SafeAreaView 
             style={{flex:1,backgroundColor:'black'}}
         >
-            <FighterItem />
+            <View style={{backgroundColor: "black",
+                        paddingTop: 100,}}
+                >
+                <ImageBackground 
+                source={images_[num]}
+                style={
+                    {
+                        width: '100%',
+                        height: '68%',
+                        alignSelf:'center',
+                        marginLeft: 10,
+                        resizeMode: 'cover',
+                    }
+                }
+                />
+                <View>
+                    <Text 
+                        style={
+                            {
+                                fontSize: 15,
+                                alignSelf: 'center',
+                                fontWeight: '700',
+                                color: 'white'
+                            }
+                        }
+                    >
+                        {texts_[num]}
+                    </Text>
+                    <Text 
+                        style={
+                            {
+                                fontSize: 14,
+                                alignSelf: 'center',
+                                fontWeight: '500',
+                                color: 'white'
+                            }
+                        }
+                    >
+                        Fly into another galaxy
+                    </Text>
+                </View>
+            </View>
             <View style={styles.container_}>
                 <TouchableOpacity
                     style={styles.button_}
