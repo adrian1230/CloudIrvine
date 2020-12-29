@@ -15,6 +15,25 @@ const Home = ({navigation}) => {
         require('../assets/images/fighter3.png'),
         require('../assets/images/fighter4.png'),
     ];
+
+    const logo_ = [
+        {
+            id: 0,
+            src: '../assets/images/fighter1.png'
+        },
+        {
+            id: 1,
+            src: '../assets/images/fighter2.png'
+        },
+        {
+            id: 2,
+            src: '../assets/images/fighter3.png'
+        },
+        {
+            id: 3,
+            src: '../assets/images/fighter4.png'
+        }
+    ];
     
     const texts_ = [
         "Model Syrion",
@@ -23,11 +42,11 @@ const Home = ({navigation}) => {
         "Model Alexander"
     ];
     
-    const car = images_[num];
-    
     const num =  Math.floor(Math.random()*4);
     
-    const [vehicle,setVehicle] = React.useState(car);
+    const [vehicle,setVehicle] = React.useState(logo_);
+
+    const [index,setIndex] = React.useState(num)
 
     return (
         <SafeAreaView 
