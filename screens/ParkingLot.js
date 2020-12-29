@@ -11,6 +11,31 @@ import MapViewDirections from 'react-native-maps-directions';
 import {COLORS_,SIZES_,icons,FONTS_,gakey} from "../consts/index";
 
 const ParkingLot = ({route,navigation}) => {
+    const logo_ = [
+        {
+            id: 0,
+            src: '../assets/images/fighter1.png'
+        },
+        {
+            id: 1,
+            src: '../assets/images/fighter2.png'
+        },
+        {
+            id: 2,
+            src: '../assets/images/fighter3.png'
+        },
+        {
+            id: 3,
+            src: '../assets/images/fighter4.png'
+        }
+    ];
+    
+    const num =  Math.floor(Math.random()*4)
+    
+    const [vehicle,setVehicle] = React.useState(logo_)
+
+    const [index,setIndex] = React.useState(num)
+
     const mapView = useRef()
 
     const [rest, setRest] = useState(null)
@@ -106,7 +131,7 @@ const ParkingLot = ({route,navigation}) => {
                         }}
                     >
                         <Image
-                            // source={icons.pin}
+                            source={icons.map_}
                             style={{
                                 width: 25,
                                 height: 25,
@@ -126,7 +151,7 @@ const ParkingLot = ({route,navigation}) => {
                 rotation={angle}
             >
                 <Image
-                    // source={icons.car}
+                    source={icons.map_}
                     style={{
                         width: 40,
                         height: 40
@@ -212,7 +237,7 @@ const ParkingLot = ({route,navigation}) => {
                     }}
                 >
                     <Image
-                        // source={icons.red_pin}
+                        source={icons.map_}
                         style={{
                             width: 30,
                             height: 30,
@@ -254,7 +279,7 @@ const ParkingLot = ({route,navigation}) => {
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         {/* Avatar */}
                         <Image
-                            // source={restaurant?.courier.avatar}
+                            source={icons.map_}
                             style={{
                                 width: 50,
                                 height: 50,
@@ -268,7 +293,7 @@ const ParkingLot = ({route,navigation}) => {
                                 <Text style={{ ...FONTS_.h4 }}>{rest?.courier.name}</Text>
                                 <View style={{ flexDirection: 'row' }}>
                                     <Image
-                                        // source={icons.star}
+                                        source={icons.map_}
                                         style={{ width: 18, height: 18, tintColor: COLORS_.primary, marginRight: SIZES_.padding }}
                                     />
                                     <Text style={{ ...FONTS_.body3 }}>{rest?.rating}</Text>

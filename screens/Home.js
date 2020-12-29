@@ -4,11 +4,15 @@ import {
     ImageBackground,
     Text,
     SafeAreaView,
-    TouchableOpacity
+    // TouchableOpacity,
+    // Modal,
+    Button
 } from 'react-native';
 import styles from '../components/love/styles';
 
 const Home = ({navigation}) => {
+    // const [modalVisible, setModalVisible] = React.useState(false);
+
     const images_ = [
         require('../assets/images/fighter1.png'),
         require('../assets/images/fighter2.png'),
@@ -95,13 +99,35 @@ const Home = ({navigation}) => {
                 </View>
             </View>
             <View style={styles.container_}>
-                <TouchableOpacity
-                    style={styles.button_}
+                {/* <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalVisible}
+                >
+                    <TouchableOpacity
+                        onPress={()=>{
+                            setModalVisible(!modalVisible);
+                        }}
+                    >
+                        <Text>Submit</Text>
+                    </TouchableOpacity>
+                </Modal> */}
+                <Button
+                    style={
+                        {
+                            fontWeight:"700"
+                        }
+                    }
+                    // onPress={() => {
+                    //     setModalVisible(true);
+                    // }}
+                    color="red"
+                    title="Get in and Fight"
                 >
                     <Text style={{fontSize:20,fontWeight:'bold',color:"yellow"}}>
                         Get in and fight
                     </Text>
-                </TouchableOpacity>
+                </Button>
             </View>
         </SafeAreaView>
     )
