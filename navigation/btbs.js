@@ -24,12 +24,12 @@ const TabBarButt = ({accessibilityState,children,onPress}) => {
                 <View style={{ flexDirection: 'row', position: 'absolute', top: 0 }}>
                     <View style={{ flex: 1, backgroundColor: COLORS_.white }}></View>
                     <Svg
-                        width={75}
-                        height={61}
-                        viewBox="0 0 75 61"
+                        width={55}
+                        height={50}
+                        viewBox="0 0 55 50"
                     >
                         <Path
-                            d="M75.2 0v61H0V0c4.1 0 7.4 3.1 7.9 7.1C10 21.7 22.5 33 37.7 33c15.2 0 27.7-11.3 29.7-25.9.5-4 3.9-7.1 7.9-7.1h-.1z"
+                            d="M25 10 L98 65 L70 25 L16 77 L11 30 L0 4 L90 50 L50 10 L11 22 L77 95 L20 25"
                             fill={COLORS_.white}
                         />
                     </Svg>
@@ -38,12 +38,12 @@ const TabBarButt = ({accessibilityState,children,onPress}) => {
 
                 <TouchableOpacity
                     style={{
-                        top: -22.5,
+                        top: -15.5,
                         justifyContent: 'center',
                         alignItems: 'center',
-                        width: 50,
-                        height: 50,
-                        borderRadius: 25,
+                        width: 40,
+                        height: 40,
+                        borderRadius: 15,
                         backgroundColor: COLORS_.white
                     }}
                     onPress={onPress}
@@ -57,7 +57,7 @@ const TabBarButt = ({accessibilityState,children,onPress}) => {
             <TouchableOpacity
                 style={{
                     flex: 1,
-                    height: 60,
+                    height: 30,
                     backgroundColor: COLORS_.white
                 }}
                 activeOpacity={1}
@@ -79,7 +79,7 @@ const CustTabBar = (props) => {
                         bottom: 0,
                         left: 0,
                         right: 0,
-                        height: 30,
+                        height: 10,
                         backgroundColor: COLORS_.white
                     }}
                 ></View>
