@@ -23,16 +23,6 @@ const TabBarButt = ({accessibilityState,children,onPress}) => {
             <View style={{ flex: 1, alignItems: "center" }}>
                 <View style={{ flexDirection: 'row', position: 'absolute', top: 0 }}>
                     <View style={{ flex: 1, backgroundColor: COLORS_.white }}></View>
-                    <Svg
-                        width={55}
-                        height={50}
-                        viewBox="0 0 55 50"
-                    >
-                        <Path
-                            d="M25 10 L98 65 L70 25 L16 77 L11 30 L0 4 L90 50 L50 10 L11 22 L77 95 L20 25"
-                            fill={COLORS_.white}
-                        />
-                    </Svg>
                     <View style={{ flex: 1, backgroundColor: COLORS_.white }}></View>
                 </View>
 
